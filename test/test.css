@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.icons {
+    font-size: 50px;
+}
+.calendar {
+    margin-top: 100px;
+    margin-left: 200px;
+}
+p {
+    font-size: 30px;
+}
