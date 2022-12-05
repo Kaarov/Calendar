@@ -1,8 +1,5 @@
 const daysTag = document.querySelector(".days"),
-    booking_scheduleTag = document.querySelector(".booking-schedule"),
     currentDate = document.querySelector(".current-date"),
-    currentDateMonthID = document.querySelector("#current-date-month"),
-    currentDateYearID = document.querySelector("#current-date-year"),
     prevNextIcon = document.querySelectorAll(".icons span");
 
 // getting new date, current year and month
@@ -14,7 +11,7 @@ let date = new Date(),
 const months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
 
-const renderCalendar = (day) => {
+const renderCalendar = () => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
         lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
         lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
@@ -27,13 +24,8 @@ const renderCalendar = (day) => {
 
     for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
         // adding active class to li if the current day, month, and year matched
-        let isToday;
-        if (i === date.getDate() && currMonth === new Date().getMonth()
-        && currYear === new Date().getFullYear())  {
-            isToday = "active";
-        } else {
-            isToday = "";
-        };
+        let isToday = i === date.getDate() && currMonth === new Date().getMonth()
+        && currYear === new Date().getFullYear() ? "active" : "";
         liTag += `<li class="${isToday}">${i}</li>`;
     }
 
@@ -41,12 +33,8 @@ const renderCalendar = (day) => {
         liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
     }
     currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
-    currentDateMonthID.innerHTML = `${currMonth}`;
-    currentDateYearID.innerHTML = `${currYear}`;
     daysTag.innerHTML = liTag;
 }
-let dayclicked;
-
 renderCalendar();
 
 prevNextIcon.forEach(icon => { // getting prev and next icons
@@ -63,37 +51,5 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
             date = new Date(); // pass the current date as date value
         }
         renderCalendar(); // calling renderCalendar function
-
-        // const daysli = document.querySelectorAll(".days li");
-
-        // daysli.forEach(li => { 
-        //     li.addEventListener("click", () => {
-        //         li.className = "active";
-        //         console.log(li);
-        //     })
-        // }) 
     });
 });
-
-const daysli = document.querySelectorAll(".days li");
-
-const day_of_month = document.getElementById("message");
-
-const daysclicked = daysli.forEach(li => { 
-    li.addEventListener("click", () => {
-        console.log(li);
-        day_of_month.innerHTML = `${li.firstChild.nodeValue}  ${months[currMonth]}`;
-
-
-
-        let liTag = "";
-
-        // if (10 === parseInt(li.firstChild.nodeValue)) {
-
-        for (let i = 6; i < 22; i++) {
-            liTag += `<li class="booking-row"><span>${i} : 00</span><span>${i+1} : 00</span><a class="disable">disable</a></li>`;
-        }
-        // }
-        booking_scheduleTag.innerHTML = liTag;
-    })
-}) 
