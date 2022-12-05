@@ -1,3 +1,4 @@
+/* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 *{
     margin: 0;
@@ -5,18 +6,12 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.calendar-booking {
+body{
     display: flex;
     align-items: center;
+    padding: 0 10px;
     justify-content: center;
-}
-.grid-calendar {
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 20px 0px;
-    padding: 20px 10px;
-    min-height: 50vh;
+    min-height: 100vh;
     background:linear-gradient(to right, #9796f0, #fbc7d4);
 }
 .wrapper{
@@ -55,9 +50,6 @@ header .icons span:hover{
 header .current-date{
     font-size: 1.45rem;
     font-weight: 500;
-}
-#current-date-month, #current-date-year {
-    visibility : hidden;
 }
 .calendar{
     padding: 20px;
@@ -108,70 +100,4 @@ header .current-date{
 }
 .days li:not(.active):hover::before{
     background: #f2f2f2;
-}
-.booking-time {
-    height: 50vh;
-    width: 55vh;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    background-color: #fff;
-    overflow: scroll;
-}
-.booking-times{
-    padding: 20px;
-}
-.booking-times ul{
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    text-align: center;
-}
-.booking-times .booking-schedule{
-    margin-bottom: 20px;
-}
-
-.booking-times .booking-schedule li{
-    z-index: 1;
-    position: relative;
-    margin-top: 30px;
-}
-.booking-schedule li.inactive{
-    color: #aaa;
-}
-.booking-schedule li.active{
-    color: #fff;
-}
-.booking-row {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 100px 100px 200px;
-    grid-gap: 3px;
-    justify-items: center;
-    align-items: center;
-}
-.booking-row > a{
-    border-radius: 20px;
-    width: 18vh;
-}
-.booking-row > span {
-    background-color: #9796f0;
-    border-radius: 20px;
-    width: 10vh;
-}
-.booking-times .booking-schedule li .able{
-    cursor: pointer;
-    background-color:rgba(0,0,0,0.12);
-}
-.booking-times .booking-schedule li .disable{
-    background-color: grey;
-}
-.booking-times .booking-schedule li .booked{
-    background-color: red;
-}
-.booking-times .booking-schedule li .booked-own{
-    background-color: greenyellow;
-}
-.message {
-    text-align: center;
-    font-size: 27px;
 }
