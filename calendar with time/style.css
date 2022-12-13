@@ -17,11 +17,13 @@
     height: 30rem;
     width: 100%;
 }
+
 .field-title {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .field-title h1 {
     text-transform: uppercase;
     font-size: 5rem;
@@ -34,6 +36,7 @@
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
 }
+
 .calendar-booking {
     display: flex;
     align-items: center;
