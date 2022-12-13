@@ -5,11 +5,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.field-image {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-}
+
 .field-image img {
     width: auto;
     object-fit: cover;
@@ -42,6 +38,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .grid-calendar {
     display: grid;
     grid-template-columns: 1fr;
