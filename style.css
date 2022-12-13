@@ -49,6 +49,7 @@ header .icons span{
 .icons span:last-child{
     margin-right: -10px;
 }
+
 header .icons span:hover{
     background: #f2f2f2;
 }
